@@ -15,7 +15,9 @@ const AddTenant = () => {
       try {
         await dispatch(getMe()).unwrap(); // Tunggu hingga getMe selesai
         // Fetch tenant data
-        const response = await axios.get("http://localhost:5000/api/tenants");
+        const response = await axios.get(
+          "https://consolerentapideploytest-production.up.railway.app/api/tenants"
+        );
         const tenants = response.data;
 
         // Check if all statuses are "Selesai" and match user uuid

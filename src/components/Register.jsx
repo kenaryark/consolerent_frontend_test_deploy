@@ -21,7 +21,10 @@ const Register = () => {
   const register = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/users", data);
+      await axios.post(
+        "https://consolerentapideploytest-production.up.railway.app/api/users",
+        data
+      );
       navigate("/login");
     } catch (error) {
       if (error.response) {

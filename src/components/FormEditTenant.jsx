@@ -27,7 +27,7 @@ const FormEditTenant = () => {
     const fetchTenant = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/tenants/${id}`
+          `https://consolerentapideploytest-production.up.railway.app/api/tenants/${id}`
         );
         const data = response.data;
         setTenant(data);
@@ -108,7 +108,7 @@ const FormEditTenant = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/tenants/${id}`,
+        `https://consolerentapideploytest-production.up.railway.app/api/tenants/${id}`,
         formData
       );
 

@@ -22,7 +22,10 @@ const FormAddUser = () => {
   const saveUser = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/users", data);
+      await axios.post(
+        "https://consolerentapideploytest-production.up.railway.app/api/users",
+        data
+      );
       navigate("/users");
     } catch (error) {
       if (error.response) {

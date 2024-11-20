@@ -46,7 +46,7 @@ const FormPayment = () => {
     };
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/process-transaction",
+        "https://consolerentapideploytest-production.up.railway.app/api/process-transaction",
         dataPayment
       );
 
@@ -98,7 +98,10 @@ const FormPayment = () => {
     };
 
     try {
-      await axios.post("http://localhost:5000/api/tenants", data);
+      await axios.post(
+        "https://consolerentapideploytest-production.up.railway.app/api/tenants",
+        data
+      );
       // navigate("/tenants");
     } catch (error) {
       console.error("Error:", error);

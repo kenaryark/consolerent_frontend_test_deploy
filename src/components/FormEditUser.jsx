@@ -19,7 +19,7 @@ const FormEditUser = () => {
     const getUserById = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/users/${id}`
+          `https://consolerentapideploytest-production.up.railway.app/api/users/${id}`
         );
         setName(response.data.name);
         setEmail(response.data.email);
@@ -36,13 +36,16 @@ const FormEditUser = () => {
   const updateUser = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:5000/api/users/${id}`, {
-        name: name,
-        email: email,
-        password: password,
-        confPassword: confPassword,
-        role: role,
-      });
+      await axios.patch(
+        `https://consolerentapideploytest-production.up.railway.app/api/users/${id}`,
+        {
+          name: name,
+          email: email,
+          password: password,
+          confPassword: confPassword,
+          role: role,
+        }
+      );
       user.role === "admin" ? navigate("/users") : navigate("/");
     } catch (error) {
       if (error.response) {

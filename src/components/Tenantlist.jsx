@@ -13,12 +13,16 @@ const TenantList = () => {
   }, []);
 
   const getTenants = async () => {
-    const response = await axios.get("http://localhost:5000/api/tenants");
+    const response = await axios.get(
+      "https://consolerentapideploytest-production.up.railway.app/api/tenants"
+    );
     setTenants(response.data);
   };
 
   const deleteTenant = async (tenantId) => {
-    await axios.delete(`http://localhost:5000/api/tenants/${tenantId}`);
+    await axios.delete(
+      `https://consolerentapideploytest-production.up.railway.app/api/tenants/${tenantId}`
+    );
     getTenants();
   };
 

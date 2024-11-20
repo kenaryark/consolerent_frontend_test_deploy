@@ -170,7 +170,10 @@ const FormAddTenant = () => {
       navigate("/payment", { state: { formData } });
     } else if (formData.jenis_pembayaran === "langsung") {
       try {
-        await axios.post("http://localhost:5000/api/tenants", data);
+        await axios.post(
+          "https://consolerentapideploytest-production.up.railway.app/api/tenants",
+          data
+        );
         navigate("/tenants");
       } catch (error) {
         console.error("Error:", error);
