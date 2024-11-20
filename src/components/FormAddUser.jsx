@@ -9,7 +9,7 @@ const FormAddUser = () => {
   const [password, setPassword] = useState("");
   const [confPassword, setConfPassword] = useState("");
   const [role, setRole] = useState("");
-  const [msg, setMsg] = useState("");
+  // const [msg, setMsg] = useState("");
   const navigate = useNavigate();
 
   const data = {
@@ -29,7 +29,7 @@ const FormAddUser = () => {
       navigate("/users");
     } catch (error) {
       if (error.response) {
-        setMsg(error.response.data.msg);
+        // setMsg(error.response.data.msg);
       }
     }
   };
