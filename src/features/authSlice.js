@@ -18,7 +18,8 @@ export const LoginUser = createAsyncThunk(
         {
           email: user.email,
           password: user.password,
-        }
+        },
+        { withCredentials: true } // Kirim cookie lintas-origin
       );
       return response.data;
     } catch (error) {
@@ -33,7 +34,8 @@ export const LoginUser = createAsyncThunk(
 export const getMe = createAsyncThunk("user/getMe", async (_, thunkAPI) => {
   try {
     const response = await axios.get(
-      "https://consolerentapideploytest-production.up.railway.app/api/me"
+      "https://consolerentapideploytest-production.up.railway.app/api/me",
+      { withCredentials: true } // Kirim cookie lintas-origin
     );
     return response.data;
   } catch (error) {
@@ -46,7 +48,8 @@ export const getMe = createAsyncThunk("user/getMe", async (_, thunkAPI) => {
 
 export const LogOut = createAsyncThunk("user/LogOut", async () => {
   await axios.delete(
-    "https://consolerentapideploytest-production.up.railway.app/api/logout"
+    "https://consolerentapideploytest-production.up.railway.app/api/logout",
+    { withCredentials: true } // Kirim cookie lintas-origin
   );
 });
 
