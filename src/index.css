@@ -1,13 +1,8 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Tambahkan ini ke file CSS kamu */
+.sidebar-sticky {
+  position: -webkit-sticky; /* Untuk dukungan di browser Safari */
+  position: sticky;
+  top: 0; /* Atur posisi dari atas */
+  height: 100vh; /* Membuat sidebar setinggi viewport */
+  overflow-y: auto; /* Agar konten di dalam sidebar dapat di-scroll jika terlalu panjang */
 }
