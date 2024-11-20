@@ -7,6 +7,8 @@ import "bulma/css/bulma.css";
 import axios from "axios";
 import "./index.css";
 
+axios.defaults.baseURL =
+  "https://consolerentapideploytest-production.up.railway.app";
 axios.defaults.withCredentials = true;
 
 const container = document.getElementById("root");
