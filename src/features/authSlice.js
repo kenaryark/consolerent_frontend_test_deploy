@@ -18,12 +18,10 @@ export const LoginUser = createAsyncThunk(
         {
           email: user.email,
           password: user.password,
-        },
-        { withCredentials: true } // Kirim cookie lintas-origin
+        }
       );
       return response.data;
     } catch (error) {
-      console.error("Login Error:", error.response?.data || error.message); // Log error
       if (error.response) {
         const message = error.response.data.msg;
         return thunkAPI.rejectWithValue(message);
@@ -35,13 +33,11 @@ export const LoginUser = createAsyncThunk(
 export const getMe = createAsyncThunk("user/getMe", async (_, thunkAPI) => {
   try {
     const response = await axios.get(
-      "https://consolerentapideploytest-production.up.railway.app/api/me",
-      { withCredentials: true } // Kirim cookie lintas-origin
+      "https://consolerentapideploytest-production.up.railway.app/api/me"
     );
     return response.data;
   } catch (error) {
     if (error.response) {
-      console.error("GetMe Error:", error.response?.data || error.message); // Log error
       const message = error.response.data.msg;
       return thunkAPI.rejectWithValue(message);
     }
@@ -50,8 +46,7 @@ export const getMe = createAsyncThunk("user/getMe", async (_, thunkAPI) => {
 
 export const LogOut = createAsyncThunk("user/LogOut", async () => {
   await axios.delete(
-    "https://consolerentapideploytest-production.up.railway.app/api/logout",
-    { withCredentials: true } // Kirim cookie lintas-origin
+    "https://consolerentapideploytest-production.up.railway.app/api/logout"
   );
 });
 
