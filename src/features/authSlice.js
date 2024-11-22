@@ -33,7 +33,8 @@ export const LoginUser = createAsyncThunk(
 export const getMe = createAsyncThunk("user/getMe", async (_, thunkAPI) => {
   try {
     const response = await axios.get(
-      "https://consolerentapideploytest-production.up.railway.app/api/me"
+      "https://consolerentapideploytest-production.up.railway.app/api/me",
+      { withCredentials: true }
     );
     return response.data;
   } catch (error) {
